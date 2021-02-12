@@ -1,6 +1,8 @@
 import React from "react";
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
 import AppButton from "../components/AppButton";
+import Constants from 'expo-constants'
+console.log(Constants);
 
 function WelcomeScreen(props) {
   return (
