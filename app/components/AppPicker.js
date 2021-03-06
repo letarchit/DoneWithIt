@@ -17,11 +17,14 @@ import PickerItem from "./PickerItem";
 function AppPicker({ 
   icon, 
   items, 
-  onSelectItem, 
+  numberOfColumn= 1,
+  onSelectItem,
+  PickerItemComponent = PickerItem,
   placeholder, 
   selectedItem,
-  width }) {
-  const [modalVisible, setModalVisible] = useState(false);
+  width='100%' }) {
+  
+    const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>

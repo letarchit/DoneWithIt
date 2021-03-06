@@ -1,28 +1,16 @@
-import React, {useState} from "react";
-import { TextInput, View, Text, Switch } from "react-native";
-import MessagesScreen from "./app/screens/MessagesScreen";
-import Icon from "./app/components/Icon"
-import ListItem from "./app/components/ListItem"
-import ViewImageScreen from "./app/screens/ViewImageScreen";
+import React from "react";
+import { Text, Button } from "react-native"
 import Screen from './app/components/Screen'
-import AccountScreen from "./app/screens/AccountScreen";
-import ListingsScreen from "./app/screens/ListingsScreen";
-import LoginScreen from "./app/screens/LoginScreen";
-import RegisterScreen from "./app/screens/RegisterScreen";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
+import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 
-export default function App() { 
-  return( <ListingEditScreen /> 
-  )
+export default function App() {
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
-
-{/* <ListItem title="My Title" ImageComponent={<Icon name="email"/>}/> */}
-
-
-{/* <Icon 
-    name="email"
-    size={50}
-    backgroundColor = "red"
-    iconColor="white"
-   /> */}

@@ -4,6 +4,8 @@ import React from 'react';
 import Screen from '../components/Screen'
 import Card from '../components/Card'
 import colors from '../config/colors'
+import routes from '../navigation/routes'
+import navigationTheme from '../navigation/navigationTheme';
 const listings = [
     {
         id: 1,
@@ -21,7 +23,7 @@ const listings = [
 ]
 
 
-function ListingsScreen(props) {
+function ListingsScreen({navigation}) {
     return (
         <Screen style={styles.screen}>
             <FlatList
@@ -31,7 +33,9 @@ function ListingsScreen(props) {
                 <Card 
                 title={item.title}
                 subTitle={"$" + item.price}
-                image={item.image}/>
+                image={item.image}
+                onPress={()=> navigation.navigate(routes.LISTING_DETAILS,item)}/>
+
             }
             >
             </FlatList>
